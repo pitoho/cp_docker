@@ -4,9 +4,7 @@ services:
   nginx:
     image: nginx:latest
     ports:
-      - "80:80"
-    volumes:
-      - ./nginx-conf:/etc/nginx/conf.d
+      - "8089:80"
     depends_on:
       - web
 
@@ -23,8 +21,6 @@ services:
     image: httpd:latest
     ports:
       - "8081:80"
-    volumes:
-      - ./apache:/usr/local/apache2/htdocs
 
   redis:
     image: redis:latest
